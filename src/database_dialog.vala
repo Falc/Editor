@@ -1,20 +1,12 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
 /*
- * view_database_dialog.vala
- * Copyright (C) EasyRPG Project 2011
+ * Copyright (C) 2011 EasyRPG Project
  *
- * EasyRPG is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * License: https://github.com/EasyRPG/Editor/blob/master/COPYING GPL
  *
- * EasyRPG is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * Authors:
+ * - Aitor García (Falc) <aitor.falc@gmail.com>
+ * - Mariano Suligoy (MarianoGNU) <marianognu.easyrpg@gmail.com>
  */
 
 /**
@@ -24,20 +16,20 @@ public class DatabaseDialog : Gtk.Dialog {
 	/*
 	 * Properties
 	 */
-	private weak MainController controller;
+	private weak Editor editor;
 	private ActorFrame actor_frame;
 	private Gtk.Notebook notebook;
 
 	/**
 	 * Builds the database interface.
 	 * 
-	 * @param controller A reference to the controller that launched this view.
+	 * @param editor A reference to the Editor class.
 	 */
-	public DatabaseDialog (MainController controller) {
+	public DatabaseDialog (Editor editor) {
 		/*
 		 * Initialize properties
 		 */
-		this.controller = controller;
+		this.editor = editor;
 		this.set_title("Database");
 		this.add_button (Gtk.Stock.OK, 0);
 		this.add_button (Gtk.Stock.CANCEL, 1);
